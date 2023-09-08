@@ -31,7 +31,7 @@ async function run() {
     const userCollection = client.db('taskDB').collection("users");
     const taskCollection = client.db('taskDB').collection("tasks");
 
-    app.post('/tasks', async(req, res)=>{
+    app.post('/task', async(req, res)=>{
         const user =req.body;
         // console.log('new user', user);
         const result = await taskCollection.insertOne(user);
@@ -39,7 +39,7 @@ async function run() {
       })
  
 
-    app.get('/tasks', async(req, res)=>{
+    app.get('/task', async(req, res)=>{
       const cursor =taskCollection.find()
       const result = await cursor.toArray();
       res.send(result);
