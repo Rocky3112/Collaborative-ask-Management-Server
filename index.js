@@ -27,7 +27,7 @@ async function run() {
   
     await client.connect();
 
-    const database = client.db("taskDB");
+  
     const userCollection = client.db('taskDB').collection("users");
     const taskCollection = client.db('taskDB').collection("tasks");
 
